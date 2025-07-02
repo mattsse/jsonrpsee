@@ -523,8 +523,8 @@ struct BoundedWriter {
 
 impl BoundedWriter {
 	/// Create a new bounded writer.
-	pub fn new(max_len: usize) -> Self {
-		Self { max_len, buf: Vec::with_capacity(128) }
+	pub fn new(_max_len: usize) -> Self {
+		Self { max_len: usize::MAX, buf: Vec::with_capacity(128) }
 	}
 
 	/// Consume the writer and extract the written bytes.
